@@ -7,7 +7,7 @@
 # Inherit from sm6375-common
 $(call inherit-product, device/xiaomi/sm6375-common/holi.mk)
 
-PRODUCT_SHIPPING_API_LEVEL := 30
+PRODUCT_SHIPPING_API_LEVEL := 31
 
 # Device uses high-density artwork where available
 PRODUCT_AAPT_CONFIG := normal
@@ -29,23 +29,9 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-lineage
 
-PRODUCT_PACKAGES += \
-   CarrierConfigOverlayVeux \
-   DialerOverlayVeux \
-   FrameworksResOverlayVeux \
-   SettingsProviderOverlayVeux \
-   SettingsOverlayVeux \
-   SystemUIOverlayVeux \
-   TelephonyOverlayVeux \
-   WifiOverlayVeux
-
-# Setup
-PRODUCT_PACKAGES += \
-    PixelSetupWizardResTarget
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit from vendor blobs
-$(call inherit-product, vendor/xiaomi/veux/veux-vendor.mk)
+$(call inherit-product, vendor/poco/moonstone/moonstone-vendor.mk)
